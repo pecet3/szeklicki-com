@@ -3,62 +3,38 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 
-const popupVariants = {
-  hidden: { opacity: 0, scale: 0.8, y: 20 },
-  visible: {
-    opacity: 1,
-    scale: [0.8, 1.1, 1],
-    y: 0,
-    transition: {
-      duration: 0.5,
-      times: [0, 0.6, 1],
-      ease: "easeOut",
-    },
-  },
-};
-
 const tileVariants = (delay: number) => ({
   hidden: { opacity: 0, scale: 0.8, y: 20 },
   visible: {
     opacity: 1,
-    scale: [0.8, 1.1, 1],
+    scale: [0, 1.1, 1],
     y: 0,
     transition: {
       delay: delay,
-      duration: 0.6,
+      duration: 0.3,
       ease: "easeOut",
     },
   },
 });
 
-const tileClassName = `
-  flex items-center justify-center
-  w-36 h-36 sm:w-44 sm:h-44
-  rounded-3xl
-  bg-zinc-100 dark:bg-zinc-900
-  text-zinc-700 dark:text-zinc-300
-  font-semibold text-sm tracking-widest
-  shadow-sm cursor-pointer
-  hover:scale-105 hover:shadow-md
-  transition-shadow duration-200
-`;
-
 export default function Home() {
   return (
     <div
       className="flex min-h-screen items-center justify-center 
-    font-sans"
+    font-sans "
     >
       <main
         className="flex min-h-screen w-full 
-      max-w-3xl flex-col items-center justify-between py-32 px-6 sm:px-16 
+       flex-col items-center justify-center py-32 px-6 sm:px-16 
         sm:items-start"
       >
-        <motion.div className="text-4xl m-0 text-center font-sans">
+        <motion.div
+          className="text-7xl font-bold m-auto text-center font-sans text-white
+        "
+        >
           <Typewriter
             options={{
-              strings: `
-                     szeklicki.com`,
+              strings: `szeklicki.com`,
               autoStart: true,
               delay: 0,
               cursor: "",
@@ -66,24 +42,46 @@ export default function Home() {
           />
         </motion.div>
         {/* TILES */}
-        <div className="flex m-auto gap-4 flex-wrap justify-center sm:justify-start">
-          <motion.div
-            variants={tileVariants(0.6) as any}
+        <div className="flex m-auto gap-12  justify-center sm:justify-start">
+          {/* TILE 1 */}
+          <motion.a
+            href="https://preview--estate-wise-panel.lovable.app/"
+            variants={tileVariants(0.3) as any}
             initial="hidden"
             animate="visible"
-            className={tileClassName}
+            className="flex bg-black flex-col justify-center items-center hover:scale-105 pt-4 px-3 pb-4
+              border border-cyan-500 hover:cursor-pointer
+                  backdrop-blur-xl  hover:ring-cyan-400 hover:ring-2 
+                  hover:shadow-xl hover:shadow-cyan-400/30
+                  rounded-xl shadow-lg  transition duration-300  w-full"
           >
-            TILE 1
-          </motion.div>
-
-          <motion.div
-            variants={tileVariants(0.65) as any}
+            <Image
+              src={"/consulting-logo.png"}
+              width={400}
+              height={400}
+              alt="consulting"
+            />
+          </motion.a>
+          {/* TILE 2 */}
+          <motion.a
+            href="https://zn.szeklicki.com"
+            variants={tileVariants(0.3) as any}
             initial="hidden"
             animate="visible"
-            className={tileClassName}
+            className="flex flex-col items-center justify-center hover:scale-105 pt-4 px-3 pb-4
+              border border-red-400 hover:cursor-pointer
+                    bg-white backdrop-blur-xl 
+                     hover:ring-red-500 hover:ring-2 hover:shadow-xl 
+                     hover:shadow-red-500/40
+                  rounded-xl shadow-lg  transition duration-300  w-full"
           >
-            TILE 2
-          </motion.div>
+            <Image
+              src={"/zn-logo.png"}
+              width={400}
+              height={400}
+              alt="consulting"
+            />
+          </motion.a>
         </div>
       </main>
     </div>
