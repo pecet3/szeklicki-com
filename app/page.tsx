@@ -4,15 +4,15 @@ import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 
 const tileVariants = (delay: number) => ({
-  hidden: { opacity: 0, scale: 0.8, y: 20 },
+  hidden: { opacity: 0, scale: 0, y: 20 },
   visible: {
     opacity: 1,
-    scale: [0, 1.1, 1],
-    y: 0,
+    scale: [0.1, 1.2, 1],
+    y: [0],
     transition: {
       delay: delay,
       duration: 0.3,
-      ease: "easeOut",
+      ease: "easeInOut",
     },
   },
 });
@@ -29,14 +29,15 @@ export default function Home() {
         sm:items-start"
       >
         <motion.div
-          className="text-7xl font-bold m-auto text-center font-sans text-white
+          className="text-7xl font-bold m-auto
+           text-center font-sans tracking-widest text-white
         "
         >
           <Typewriter
             options={{
               strings: `szeklicki.com`,
               autoStart: true,
-              delay: 0,
+              delay: 20,
               cursor: "",
             }}
           />
@@ -46,7 +47,7 @@ export default function Home() {
           {/* TILE 1 */}
           <motion.a
             href="https://preview--estate-wise-panel.lovable.app/"
-            variants={tileVariants(0.3) as any}
+            variants={tileVariants(0.5) as any}
             initial="hidden"
             animate="visible"
             className="flex bg-black flex-col justify-center items-center hover:scale-105 pt-4 px-3 pb-4
@@ -65,12 +66,12 @@ export default function Home() {
           {/* TILE 2 */}
           <motion.a
             href="https://zn.szeklicki.com"
-            variants={tileVariants(0.3) as any}
+            variants={tileVariants(0.5) as any}
             initial="hidden"
             animate="visible"
             className="flex flex-col items-center justify-center hover:scale-105 pt-4 px-3 pb-4
               border border-red-400 hover:cursor-pointer
-                    bg-white backdrop-blur-xl 
+                    bg-gray-200 backdrop-blur-xl 
                      hover:ring-red-500 hover:ring-2 hover:shadow-xl 
                      hover:shadow-red-500/40
                   rounded-xl shadow-lg  transition duration-300  w-full"
