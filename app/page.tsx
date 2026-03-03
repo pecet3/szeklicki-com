@@ -50,9 +50,9 @@ export default function Home() {
             animate="visible"
             className="flex bg-white/50 flex-col justify-center items-center hover:scale-105 pt-4 px-3 pb-4
               hover:cursor-pointer
-                  backdrop-blur-xs  hover:ring-cyan-400 hover:ring-2 
-                  hover:shadow-xl hover:shadow-cyan-400/30
-                  rounded-xl shadow-lg  transition duration-300  w-full"
+                  backdrop-blur-xs  hover:ring-sky-700 hover:ring-2 
+                  hover:shadow-xl hover:shadow-sky-600/40
+                  rounded-xl shadow-xl  transition duration-300  w-full"
           >
             <Image
               src={"/consulting-logo1.png"}
@@ -85,14 +85,9 @@ export default function Home() {
                     bg-white/50 backdrop-blur-xs
                      hover:ring-red-500 hover:ring-2 hover:shadow-xl 
                      hover:shadow-red-500/40
-                  rounded-xl shadow-lg  transition duration-300  w-full"
+                  rounded-xl shadow-xl  transition duration-300  w-full"
           >
-            <Image
-              src={"/zn-logo.png"}
-              width={400}
-              height={400}
-              alt="consulting"
-            />
+            <Image src={"/zn-logo.png"} width={400} height={400} alt="zn" />
           </motion.a>
         </div>
       </main>
