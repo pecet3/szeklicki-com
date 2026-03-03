@@ -3,20 +3,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 
-const tileVariants = (delay: number) => ({
-  hidden: { opacity: 0, scale: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    scale: [0.1, 1.2, 1],
-    y: [0],
-    transition: {
-      delay: delay,
-      duration: 0.3,
-      ease: "easeInOut",
-    },
-  },
-});
-
 export default function Home() {
   return (
     <div
@@ -35,7 +21,7 @@ export default function Home() {
         >
           <Typewriter
             options={{
-              strings: `szeklicki.com`,
+              strings: `SZEKLICKI NIERUCHOMOŚCI`,
               autoStart: true,
               delay: 20,
               cursor: "",
@@ -47,17 +33,30 @@ export default function Home() {
           {/* TILE 1 */}
           <motion.a
             href="https://preview--estate-wise-panel.lovable.app/"
-            variants={tileVariants(0.5) as any}
+            variants={{
+              hidden: { opacity: 0, scale: 0, y: 20 },
+              visible: {
+                opacity: 1,
+                scale: [0.1, 1.2, 1],
+                y: [-200, 0],
+                x: [-200, 0],
+                transition: {
+                  delay: 0.5,
+                  duration: 0.3,
+                  ease: "easeInOut",
+                },
+              },
+            }}
             initial="hidden"
             animate="visible"
-            className="flex bg-black flex-col justify-center items-center hover:scale-105 pt-4 px-3 pb-4
+            className="flex bg-white/50 flex-col justify-center items-center hover:scale-105 pt-4 px-3 pb-4
               border border-cyan-500 hover:cursor-pointer
-                  backdrop-blur-xl  hover:ring-cyan-400 hover:ring-2 
+                  backdrop-blur-xs  hover:ring-cyan-400 hover:ring-2 
                   hover:shadow-xl hover:shadow-cyan-400/30
                   rounded-xl shadow-lg  transition duration-300  w-full"
           >
             <Image
-              src={"/consulting-logo.png"}
+              src={"/consulting-logo1.png"}
               width={400}
               height={400}
               alt="consulting"
@@ -66,12 +65,26 @@ export default function Home() {
           {/* TILE 2 */}
           <motion.a
             href="https://zn.szeklicki.com"
-            variants={tileVariants(0.5) as any}
+            variants={{
+              hidden: { opacity: 0, scale: 0, y: 20 },
+              visible: {
+                opacity: 1,
+                scale: [0.1, 1.2, 1],
+                y: [200, 0],
+                x: [200, 0],
+                transition: {
+                  delay: 0.6,
+                  duration: 0.3,
+                  ease: "easeInOut",
+                },
+              },
+            }}
             initial="hidden"
             animate="visible"
-            className="flex flex-col items-center justify-center hover:scale-105 pt-4 px-3 pb-4
+            className="flex flex-col items-center justify-center hover:scale-105 
+            pt-4 px-3 pb-4
               border border-red-400 hover:cursor-pointer
-                    bg-gray-200 backdrop-blur-xl 
+                    bg-white/50 backdrop-blur-xs
                      hover:ring-red-500 hover:ring-2 hover:shadow-xl 
                      hover:shadow-red-500/40
                   rounded-xl shadow-lg  transition duration-300  w-full"
