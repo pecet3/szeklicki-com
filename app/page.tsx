@@ -49,9 +49,9 @@ export default function Home() {
             initial="hidden"
             animate="visible"
             className="flex bg-white/50 flex-col justify-center items-center hover:scale-105 pt-4 px-3 pb-4
-              hover:cursor-pointer
-                  backdrop-blur-xs  hover:ring-sky-700 hover:ring-2 
-                  hover:shadow-xl hover:shadow-sky-600/40
+              hover:cursor-pointer border border-sky-400
+                  backdrop-blur-xs  hover:ring-sky-600 hover:ring-2 
+                  hover:shadow-xl hover:shadow-sky-400/40
                   rounded-xl shadow-xl  transition duration-300  w-full"
           >
             <Image
@@ -81,7 +81,7 @@ export default function Home() {
             animate="visible"
             className="flex flex-col items-center justify-center hover:scale-105 
             pt-4 px-3 pb-4
-              hover:cursor-pointer
+              hover:cursor-pointer  border border-red-400
                     bg-white/50 backdrop-blur-xs
                      hover:ring-red-500 hover:ring-2 hover:shadow-xl 
                      hover:shadow-red-500/40
