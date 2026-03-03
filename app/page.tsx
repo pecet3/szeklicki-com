@@ -38,10 +38,9 @@ export default function Home() {
               visible: {
                 opacity: 1,
                 scale: [0.1, 1.2, 1],
-                y: [-200, 0],
-                x: [-200, 0],
+                x: [400, 0],
                 transition: {
-                  delay: 0.5,
+                  delay: 0.6,
                   duration: 0.3,
                   ease: "easeInOut",
                 },
@@ -70,8 +69,7 @@ export default function Home() {
               visible: {
                 opacity: 1,
                 scale: [0.1, 1.2, 1],
-                y: [200, 0],
-                x: [200, 0],
+                x: [-400, 0],
                 transition: {
                   delay: 0.6,
                   duration: 0.3,
